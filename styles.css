@@ -1,4 +1,4 @@
-section{
+section, button{
     all: unset;
 }
 
@@ -28,4 +28,40 @@ h1{
 .buttons{
     display: flex;
     flex: 7
+}
+
+.digitCont{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.line{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em 0 2em;
+}
+
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40%;
+    width: 20%;
+
+    border: solid 1px black;
+    border-radius: 1em;
+    background-color: lightblue;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.operations{
+    flex: 1;
+    background-color: darkblue;
+    display: flex;
+    flex-direction: column;
 }
