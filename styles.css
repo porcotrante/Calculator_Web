@@ -18,11 +18,15 @@ h1{
 }
 
 .display{
+    display: flex;
     width: 85%;
     background-color: white;
     flex: 1;
     margin: 3em auto 3em auto;
     border: 0.5px solid black;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1em;
 }
 
 .buttons{
@@ -57,11 +61,4 @@ h1{
     background-color: lightblue;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.operations{
-    flex: 1;
-    background-color: darkblue;
-    display: flex;
-    flex-direction: column;
 }
