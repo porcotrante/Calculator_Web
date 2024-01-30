@@ -83,4 +83,77 @@ digits[15].addEventListener('click', () => {
     display.textContent = display.textContent + digits[15].textContent;
 })
 
-console.log(digits[15].textContent);
+function getNumber(array, index) {
+    let numberValue = '';
+
+    while (!isNaN(array[index])) {
+        numberValue = numberValue + array[index];
+
+        index++;
+    }
+
+    return [Number(numberValue), index];
+}
+
+function calculate(array, number, index){
+    if (index == 0 && !isNaN(array[index])) {
+        const getValue = getNumber(array, index);
+
+        number = getValue[0];
+
+        index = getValue[1];
+
+        console.log('foi')
+
+        if (index == array.length) {
+            return number;
+        }   
+    }
+
+    if (array[index] == '+') {
+        index++;
+
+        number += getNumber(array,index)[0];
+        index = getNumber(array,index)[1];
+    }
+
+    else if (array[index] == '-') {
+        index++;
+
+        number -= getNumber(array,index)[0];
+        index = getNumber(array,index)[1];
+    }
+
+    else if (array[index] == 'x') {
+        index++;
+
+        number *= getNumber(array,index)[0];
+        index = getNumber(array,index)[1];
+    }
+
+    else if (array[index] == '/') {
+        index++;
+
+        number /= getNumber(array,index)[0];
+        index = getNumber(array,index)[1];
+    }
+
+    else{
+        alert('unexpected character');
+        return NaN;
+    }
+
+    if (index == array.length) {
+        return number;
+    }
+
+    else{
+        return calculate(array, number, index);
+    }
+}
+
+digits[14].addEventListener('click', () => {
+    const expr = display.textContent.split('');
+    
+    display.textContent = calculate(expr, 0, 0).toString();
+})

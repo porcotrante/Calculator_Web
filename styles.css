@@ -9,7 +9,7 @@ h1{
 .container{
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 27%;
     height: 45em;
     margin: 2em auto 0 auto;
     background-color: #b4b4b4;
